@@ -42,6 +42,21 @@ export default function QueryProcessor(query: string): string {
     return (x * y).toString();
   }
 
+  const sc = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)/);
+  if (sc) {
+    const x: number = parseInt(sc[1]);
+    const y: number = parseInt(sc[2]);
+    const z: number = parseInt(sc[3]);
+    const a: number = parseInt(sc[4]);
+    const b: number = parseInt(sc[5]);
+    const c: number = parseInt(sc[6]);
+    const numbers = [x, y, z, a, b, c];
+    for (let i = 0; i < numbers.length; i++) {
+      if (Math.sqrt(numbers[i]) % 1 === 0 && Math.cbrt(numbers[i]) % 1 === 0) {
+        return numbers[i].toString();
+      }
+    }
+  }
   return "";
 
 }
