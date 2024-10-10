@@ -32,8 +32,8 @@ describe("QueryProcessor", () => {
     });
 
     test('should return largest number', () => {
-        const query = "What is the largest number in 82, 70, 10?";
-        const response: number = QueryProcessor(query);
-        expect(response).toBe(82);
+        const query = "Which of the following numbers is the largest: 20, 72, 76";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("76");
     }
 });

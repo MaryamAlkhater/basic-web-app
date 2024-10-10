@@ -19,10 +19,13 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
-  if (query.toLowerCase().includes("largest")) {
-    const numbers = query.match(/\d+/g).map(Number);
-    const largest_number = Math.max(...numbers);
-    return largest_number;
+  const addMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)/);
+  if (addMatch) {
+    const x: number = parseInt(addMatch[1]);
+    const y: number = parseInt(addMatch[2]);
+    const z: number = parseInt(addMatch[3]);
+    const largest_number = Math.max(x, y, z);
+    return largest_number.toString();
   }
 
   return "";
