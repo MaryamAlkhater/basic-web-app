@@ -68,5 +68,13 @@ describe("QueryProcessor", () => {
         expect(response).toBe("10");
     }
     );
+
+    test('should add three numbers', () => {
+        const query = "What is 10 plus 20 plus 30";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("60");
+    }
+    );
+
     
 });

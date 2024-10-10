@@ -81,6 +81,15 @@ export default function QueryProcessor(query: string): string {
     const y: number = parseInt(minus[2]);
     return (x - y).toString();
   }
+
+  const addMatch3 = query.match(/What is (\d+) plus (\d+) plus (\d+)/);
+  if (addMatch3) {
+    const x: number = parseInt(addMatch3[1]);
+    const y: number = parseInt(addMatch3[2]);
+    const z: number = parseInt(addMatch3[3]);
+    return (x+y+z).toString();
+  }
+  
   return "";
 }
 
