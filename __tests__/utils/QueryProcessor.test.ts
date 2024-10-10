@@ -88,7 +88,7 @@ describe("QueryProcessor", () => {
         expect(response).toBe("610");
     });
 
-    
+
 
 
 });
