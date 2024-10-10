@@ -80,8 +80,7 @@ describe("QueryProcessor", () => {
         const query = "What is 2 to the power of 3";
         const response: string = QueryProcessor(query);
         expect(response).toBe("8");
-    }
-    );
+    } );
 
-    
+
 });
