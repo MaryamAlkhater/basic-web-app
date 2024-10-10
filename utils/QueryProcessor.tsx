@@ -74,6 +74,13 @@ export default function QueryProcessor(query: string): string {
     }
     return primeNumbers.join(", ");
   }
+
+  const minus = query.match(/What is (\d+) minus (\d+)/);
+  if (minus) {
+    const x: number = parseInt(minus[1]);
+    const y: number = parseInt(minus[2]);
+    return (x - y).toString();
+  }
   return "";
 }
 

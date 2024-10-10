@@ -61,4 +61,12 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("2, 3, 5");
     });
+
+    test('should subtract numbers', () => {
+        const query = "What is 20 minus 10";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("10");
+    }
+    );
+    
 });
