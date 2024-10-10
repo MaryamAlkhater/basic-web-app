@@ -35,6 +35,13 @@ export default function QueryProcessor(query: string): string {
     return (x+y).toString();
   }
   
+  const multiply = query.match(/What is (\d+) multiply (\d+)/);
+  if (multiply) {
+    const x: number = parseInt(multiply[1]);
+    const y: number = parseInt(multiply[2]);
+    return (x * y).toString();
+  }
+
   return "";
 
 }
