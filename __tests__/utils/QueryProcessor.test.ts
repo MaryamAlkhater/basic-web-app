@@ -45,7 +45,7 @@ describe("QueryProcessor", () => {
     );
 
     test('should multiply numbers', () => {
-        const query = "What is 10 multiply 20";
+        const query = "What is 10 multiplied by 20";
         const response: string = QueryProcessor(query);
         expect(response).toBe("200");
     });
