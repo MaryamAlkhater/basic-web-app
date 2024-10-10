@@ -28,6 +28,13 @@ export default function QueryProcessor(query: string): string {
     return largest_number.toString();
   }
 
+  const addMatch2 = query.match(/What is (\d+) plus (\d+)/);
+  if (addMatch2) {
+    const x: number = parseInt(addMatch2[1]);
+    const y: number = parseInt(addMatch2[2]);
+    return (x+y).toString();
+  }
+  
   return "";
 
 }

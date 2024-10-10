@@ -35,5 +35,14 @@ describe("QueryProcessor", () => {
         const query = "Which of the following numbers is the largest: 20, 72, 76";
         const response: string = QueryProcessor(query);
         expect(response).toBe("76");
+    });
+
+    test('should add numbers', () => {
+        const query = "What is 10 plus 20";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("30");
     }
+    );
+
+    
 });
