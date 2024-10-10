@@ -96,6 +96,14 @@ export default function QueryProcessor(query: string): string {
     return Math.pow(x, y).toString();
   }
 
+  const addMultiply = query.match(/What is (\d+) plus (\d+) multiplied by (\d+)/);
+  if (addMultiply) {
+    const x: number = parseInt(addMultiply[1]);
+    const y: number = parseInt(addMultiply[2]);
+    const z: number = parseInt(addMultiply[3]);
+    return ((x + y) * z).toString();
+  }
+
   return "";
 }
 

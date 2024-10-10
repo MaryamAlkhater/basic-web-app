@@ -82,5 +82,13 @@ describe("QueryProcessor", () => {
         expect(response).toBe("8");
     } );
 
+    test('should return plus multiply', () => {
+        const query = "What is 10 plus 20 multiplied by 30";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("610");
+    });
+
+    
+
 
 });
