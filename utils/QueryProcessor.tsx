@@ -57,7 +57,33 @@ export default function QueryProcessor(query: string): string {
       }
     }
   }
-  return "";
 
+  const prime = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)/);
+  if (prime) {
+    const x: number = parseInt(prime[1]);
+    const y: number = parseInt(prime[2]);
+    const z: number = parseInt(prime[3]);
+    const a: number = parseInt(prime[4]);
+    const b: number = parseInt(prime[5]);
+    const numbers = [x, y, z, a, b];
+    let primeNumbers = [];
+    for (let i = 0; i < numbers.length; i++) {
+      if (isPrime(numbers[i])) {
+        primeNumbers.push(numbers[i]);
+      }
+    }
+    return primeNumbers.join(", ");
+  }
+  return "";
+}
+
+function isPrime(num: number): boolean {
+  if (num <= 1) return false;
+  if (num <= 3) return true;
+  if (num % 2 === 0 || num % 3 === 0) return false;
+  for (let i = 5; i * i <= num; i += 6) {
+    if (num % i === 0 || num % (i + 2) === 0) return false;
+  }
+  return true;
 }
 
