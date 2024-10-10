@@ -30,4 +30,10 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("Maryam");
     });
+
+    test('should return largest number', () => {
+        const query = "What is the largest number in 82, 70, 10?";
+        const response: number = QueryProcessor(query);
+        expect(response).toBe(82);
+    }
 });

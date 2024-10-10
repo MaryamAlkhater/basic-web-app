@@ -12,11 +12,17 @@ export default function QueryProcessor(query: string): string {
       "My andrew id is: malkhate"
     );
   }
-  
+
   if (query.toLowerCase().includes("name")) {
     return (
       "Maryam"
     );
+  }
+
+  if (query.toLowerCase().includes("largest")) {
+    const numbers = query.match(/\d+/g).map(Number);
+    const largest_number = Math.max(...numbers);
+    return largest_number;
   }
 
   return "";
